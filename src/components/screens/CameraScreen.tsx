@@ -207,7 +207,7 @@ export function CameraScreen({ onCapture, onGalleryClick }: CameraScreenProps) {
       </div>
 
       {/* Controls */}
-      <div className="h-32 flex items-center justify-between px-8 bg-background pb-4 shrink-0">
+      <div className="flex items-center justify-between px-8 bg-background shrink-0 pb-20 pt-4">
         <button 
           onClick={() => toast({ title: "🔄 Câmera virada" })}
           className="w-12 h-12 rounded-full bg-card flex items-center justify-center border border-card-border active:scale-95 transition-transform"
