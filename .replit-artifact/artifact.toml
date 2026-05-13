@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "JOVI Lens — Smart Camera"
+version = "1.0.0"
+id = "artifacts/jovi-lens"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23671
+
+[services.development]
+run = "pnpm --filter @workspace/jovi-lens run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/jovi-lens", "run", "build" ]
+publicDir = "artifacts/jovi-lens/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23671"
+BASE_PATH = "/"
